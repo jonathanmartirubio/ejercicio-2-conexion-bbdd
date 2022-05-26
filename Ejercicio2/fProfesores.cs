@@ -13,14 +13,12 @@ namespace Ejercicio2
 {
     public partial class fProfesores : Form
     {
-        public fProfesores(string cadConexion, DataSet dsProfesores)
+        public fProfesores(string cadConexion)
         {
             InitializeComponent();
             this.cadConexion = cadConexion;
-            this.dsProfesores = dsProfesores;
         }
 
-        private DataSet dsProfesores;
         private string cadConexion;
     }
 }
