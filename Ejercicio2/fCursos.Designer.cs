@@ -40,30 +40,38 @@ namespace Ejercicio2
             this.bAnterior = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.bAnyadir = new System.Windows.Forms.Button();
             this.bGuardar = new System.Windows.Forms.Button();
+            this.bAnyadir = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.bEliminar = new System.Windows.Forms.Button();
+            this.bActualizar = new System.Windows.Forms.Button();
+            this.cbMostrarTodos = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbCodigo
             // 
-            this.tbCodigo.Location = new System.Drawing.Point(136, 51);
+            this.tbCodigo.Location = new System.Drawing.Point(155, 52);
             this.tbCodigo.Name = "tbCodigo";
             this.tbCodigo.Size = new System.Drawing.Size(183, 22);
             this.tbCodigo.TabIndex = 0;
+            this.tbCodigo.TextChanged += new System.EventHandler(this.tbTextoCambiado);
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(450, 51);
+            this.tbNombre.Location = new System.Drawing.Point(469, 52);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(183, 22);
             this.tbNombre.TabIndex = 1;
+            this.tbNombre.TextChanged += new System.EventHandler(this.tbTextoCambiado);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 54);
+            this.label1.Location = new System.Drawing.Point(70, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 2;
@@ -72,7 +80,7 @@ namespace Ejercicio2
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(384, 54);
+            this.label2.Location = new System.Drawing.Point(403, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 17);
             this.label2.TabIndex = 3;
@@ -81,7 +89,7 @@ namespace Ejercicio2
             // lbContador
             // 
             this.lbContador.AutoSize = true;
-            this.lbContador.Location = new System.Drawing.Point(319, 102);
+            this.lbContador.Location = new System.Drawing.Point(76, 103);
             this.lbContador.Name = "lbContador";
             this.lbContador.Size = new System.Drawing.Size(0, 17);
             this.lbContador.TabIndex = 4;
@@ -132,9 +140,9 @@ namespace Ejercicio2
             this.groupBox1.Controls.Add(this.bSiguiente);
             this.groupBox1.Controls.Add(this.bAnterior);
             this.groupBox1.Controls.Add(this.bPrimero);
-            this.groupBox1.Location = new System.Drawing.Point(32, 146);
+            this.groupBox1.Location = new System.Drawing.Point(36, 147);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(695, 119);
+            this.groupBox1.Size = new System.Drawing.Size(726, 119);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Navegación";
@@ -143,22 +151,12 @@ namespace Ejercicio2
             // 
             this.groupBox2.Controls.Add(this.bGuardar);
             this.groupBox2.Controls.Add(this.bAnyadir);
-            this.groupBox2.Location = new System.Drawing.Point(32, 271);
+            this.groupBox2.Location = new System.Drawing.Point(36, 272);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(362, 115);
+            this.groupBox2.Size = new System.Drawing.Size(357, 115);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Añadir Curso";
-            // 
-            // bAnyadir
-            // 
-            this.bAnyadir.Location = new System.Drawing.Point(22, 37);
-            this.bAnyadir.Name = "bAnyadir";
-            this.bAnyadir.Size = new System.Drawing.Size(154, 55);
-            this.bAnyadir.TabIndex = 0;
-            this.bAnyadir.Text = "Añadir";
-            this.bAnyadir.UseVisualStyleBackColor = true;
-            this.bAnyadir.Click += new System.EventHandler(this.bAnyadir_Click);
             // 
             // bGuardar
             // 
@@ -170,11 +168,73 @@ namespace Ejercicio2
             this.bGuardar.UseVisualStyleBackColor = true;
             this.bGuardar.Click += new System.EventHandler(this.bGuardar_Click);
             // 
+            // bAnyadir
+            // 
+            this.bAnyadir.Location = new System.Drawing.Point(22, 37);
+            this.bAnyadir.Name = "bAnyadir";
+            this.bAnyadir.Size = new System.Drawing.Size(154, 55);
+            this.bAnyadir.TabIndex = 0;
+            this.bAnyadir.Text = "Añadir";
+            this.bAnyadir.UseVisualStyleBackColor = true;
+            this.bAnyadir.Click += new System.EventHandler(this.bAnyadir_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.bEliminar);
+            this.groupBox3.Controls.Add(this.bActualizar);
+            this.groupBox3.Location = new System.Drawing.Point(399, 272);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(363, 115);
+            this.groupBox3.TabIndex = 12;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Actualizar y Eliminar";
+            // 
+            // bEliminar
+            // 
+            this.bEliminar.Location = new System.Drawing.Point(190, 38);
+            this.bEliminar.Name = "bEliminar";
+            this.bEliminar.Size = new System.Drawing.Size(154, 54);
+            this.bEliminar.TabIndex = 1;
+            this.bEliminar.Text = "Eliminar";
+            this.bEliminar.UseVisualStyleBackColor = true;
+            this.bEliminar.Click += new System.EventHandler(this.bEliminar_Click);
+            // 
+            // bActualizar
+            // 
+            this.bActualizar.Location = new System.Drawing.Point(30, 36);
+            this.bActualizar.Name = "bActualizar";
+            this.bActualizar.Size = new System.Drawing.Size(154, 55);
+            this.bActualizar.TabIndex = 0;
+            this.bActualizar.Text = "Actualizar";
+            this.bActualizar.UseVisualStyleBackColor = true;
+            this.bActualizar.Click += new System.EventHandler(this.bActualizar_Click);
+            // 
+            // cbMostrarTodos
+            // 
+            this.cbMostrarTodos.FormattingEnabled = true;
+            this.cbMostrarTodos.Location = new System.Drawing.Point(533, 100);
+            this.cbMostrarTodos.Name = "cbMostrarTodos";
+            this.cbMostrarTodos.Size = new System.Drawing.Size(210, 24);
+            this.cbMostrarTodos.TabIndex = 13;
+            this.cbMostrarTodos.SelectionChangeCommitted += new System.EventHandler(this.cbOpcionEscogida);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(372, 103);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(138, 17);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Mostrar Alumnos de:";
+            // 
             // fCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbMostrarTodos);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lbContador);
             this.Controls.Add(this.label2);
@@ -187,6 +247,7 @@ namespace Ejercicio2
             this.Load += new System.EventHandler(this.fCursos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +268,10 @@ namespace Ejercicio2
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button bGuardar;
         private System.Windows.Forms.Button bAnyadir;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button bEliminar;
+        private System.Windows.Forms.Button bActualizar;
+        private System.Windows.Forms.ComboBox cbMostrarTodos;
+        private System.Windows.Forms.Label label3;
     }
 }
