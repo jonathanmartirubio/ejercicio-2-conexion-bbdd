@@ -221,7 +221,7 @@ namespace Ejercicio2
 
                 dataAdapter.Update(dsCursos, "Cursos");
 
-                if (dsCursos.Tables["Cursos"].Rows.Count == 1)
+                if (maxRegistros == 1)
                 {
                     maxRegistros++;
                     pos = 0;
@@ -269,24 +269,22 @@ namespace Ejercicio2
 
                 SqlCommandBuilder cb = new SqlCommandBuilder(dataAdapter);
                 dataAdapter.Update(dsCursos, "Cursos");
-                if (dsCursos.Tables["Cursos"].Rows.Count == 0)
+                maxRegistros--;
+                if (maxRegistros == 0)
                 {
-                    maxRegistros--;
                     SinRegistros();
                     RellenarComboBox();
                 }
                 else
                 {
-                    maxRegistros--;
                     pos = 0;
                     MostrarRegistro(pos);
                     RellenarComboBox();
-                    if (dsCursos.Tables["Cursos"].Rows.Count == 1)
+                    if (maxRegistros == 1)
                     {
                         ControlarNavegacion(pos);
                     }
                     MessageBox.Show("Curso eliminado.");
-
                 }
             }
         }
