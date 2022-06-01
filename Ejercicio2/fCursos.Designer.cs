@@ -212,16 +212,16 @@ namespace Ejercicio2
             // cbMostrarTodos
             // 
             this.cbMostrarTodos.FormattingEnabled = true;
-            this.cbMostrarTodos.Location = new System.Drawing.Point(533, 100);
+            this.cbMostrarTodos.Location = new System.Drawing.Point(559, 100);
             this.cbMostrarTodos.Name = "cbMostrarTodos";
-            this.cbMostrarTodos.Size = new System.Drawing.Size(210, 24);
+            this.cbMostrarTodos.Size = new System.Drawing.Size(154, 24);
             this.cbMostrarTodos.TabIndex = 13;
             this.cbMostrarTodos.SelectionChangeCommitted += new System.EventHandler(this.cbOpcionEscogida);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(372, 103);
+            this.label3.Location = new System.Drawing.Point(396, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 17);
             this.label3.TabIndex = 14;

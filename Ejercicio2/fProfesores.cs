@@ -354,6 +354,54 @@ namespace Ejercicio2
             }
         }
 
+        // ##################################### MOSTRAR TODOS LOS PROFESORES #####################################
+        private void bMostrarTodos_Click(object sender, EventArgs e)
+        {
+            string texto = "Lista de profesores: \n";
+            string sentenciaSQL = "select nombre, apellido from profesores";
+            SqlConnection connect = new SqlConnection(cadConexion);
+            connect.Open();
+            SqlCommand mostrar = new SqlCommand(sentenciaSQL, connect);
+            SqlDataReader reader = mostrar.ExecuteReader();
+
+            while (reader.Read())
+            {
+                texto += reader[0].ToString() + " " + reader[1].ToString() + "\n";
+            }
+
+            MessageBox.Show(texto, "Mostrar todos los profesores");
+
+            connect.Close();
+        }
+
+        private void bBuscar_Click(object sender, EventArgs e)
+        {
+            string datosBusqueda, busquedaSQL;
+
+            datosBusqueda = tbBuscar.Text;
+            busquedaSQL = "";
+
+            if (!rbNombre.Checked && !rbApellidos.Checked && !rbDNI.Checked)
+                MessageBox.Show("Seleccione el parámetro por el que quiere realizar la búsqueda.");
+            else
+            {
+                if (datosBusqueda == "")
+                    MessageBox.Show("Introduzca los criterios de búsqueda.");
+                else
+                {
+                    if (rbDNI.Checked)
+                        busquedaSQL = "SELECT * FROM Profesores WHERE DNI = " + datosBusqueda;
+                    if (rbApellidos.Checked)
+                        busquedaSQL = "SELECT * FROM Profesores WHERE Apellido LIKE '%" + datosBusqueda + "%'";
+                    if (rbNombre.Checked)
+                        busquedaSQL = "SELECT * FROM Profesores WHERE Nombre LIKE '%" + datosBusqueda + "%'";
+                    fBusqueda fBus = new fBusqueda(busquedaSQL, cadConexion);
+                    fBus.ShowDialog();
+                }
+
+            }
+        }
+
         // ############################# CARGAR FORMULARIO ###############################
         private void fProfesores_Load(object sender, EventArgs e)
         {

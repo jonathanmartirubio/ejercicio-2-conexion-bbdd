@@ -52,12 +52,12 @@ namespace Ejercicio2
             this.bPrimero = new System.Windows.Forms.Button();
             this.lbContador = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.rbDNI = new System.Windows.Forms.RadioButton();
-            this.rbNombre = new System.Windows.Forms.RadioButton();
-            this.rbApellidos = new System.Windows.Forms.RadioButton();
-            this.tbBuscar = new System.Windows.Forms.TextBox();
             this.bBuscar = new System.Windows.Forms.Button();
+            this.tbBuscar = new System.Windows.Forms.TextBox();
+            this.rbApellidos = new System.Windows.Forms.RadioButton();
+            this.rbNombre = new System.Windows.Forms.RadioButton();
+            this.rbDNI = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
             this.bMostrarTodos = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -288,36 +288,22 @@ namespace Ejercicio2
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Búsqueda";
             // 
-            // label6
+            // bBuscar
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 61);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Buscar por:";
+            this.bBuscar.Location = new System.Drawing.Point(523, 45);
+            this.bBuscar.Name = "bBuscar";
+            this.bBuscar.Size = new System.Drawing.Size(157, 53);
+            this.bBuscar.TabIndex = 5;
+            this.bBuscar.Text = "Buscar";
+            this.bBuscar.UseVisualStyleBackColor = true;
+            this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
             // 
-            // rbDNI
+            // tbBuscar
             // 
-            this.rbDNI.AutoSize = true;
-            this.rbDNI.Location = new System.Drawing.Point(124, 32);
-            this.rbDNI.Name = "rbDNI";
-            this.rbDNI.Size = new System.Drawing.Size(52, 21);
-            this.rbDNI.TabIndex = 1;
-            this.rbDNI.TabStop = true;
-            this.rbDNI.Text = "DNI";
-            this.rbDNI.UseVisualStyleBackColor = true;
-            // 
-            // rbNombre
-            // 
-            this.rbNombre.AutoSize = true;
-            this.rbNombre.Location = new System.Drawing.Point(124, 61);
-            this.rbNombre.Name = "rbNombre";
-            this.rbNombre.Size = new System.Drawing.Size(79, 21);
-            this.rbNombre.TabIndex = 2;
-            this.rbNombre.TabStop = true;
-            this.rbNombre.Text = "Nombre";
-            this.rbNombre.UseVisualStyleBackColor = true;
+            this.tbBuscar.Location = new System.Drawing.Point(289, 60);
+            this.tbBuscar.Name = "tbBuscar";
+            this.tbBuscar.Size = new System.Drawing.Size(184, 22);
+            this.tbBuscar.TabIndex = 4;
             // 
             // rbApellidos
             // 
@@ -330,21 +316,36 @@ namespace Ejercicio2
             this.rbApellidos.Text = "Apellidos";
             this.rbApellidos.UseVisualStyleBackColor = true;
             // 
-            // tbBuscar
+            // rbNombre
             // 
-            this.tbBuscar.Location = new System.Drawing.Point(289, 60);
-            this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(184, 22);
-            this.tbBuscar.TabIndex = 4;
+            this.rbNombre.AutoSize = true;
+            this.rbNombre.Location = new System.Drawing.Point(124, 61);
+            this.rbNombre.Name = "rbNombre";
+            this.rbNombre.Size = new System.Drawing.Size(79, 21);
+            this.rbNombre.TabIndex = 2;
+            this.rbNombre.TabStop = true;
+            this.rbNombre.Text = "Nombre";
+            this.rbNombre.UseVisualStyleBackColor = true;
             // 
-            // bBuscar
+            // rbDNI
             // 
-            this.bBuscar.Location = new System.Drawing.Point(523, 45);
-            this.bBuscar.Name = "bBuscar";
-            this.bBuscar.Size = new System.Drawing.Size(157, 53);
-            this.bBuscar.TabIndex = 5;
-            this.bBuscar.Text = "Buscar";
-            this.bBuscar.UseVisualStyleBackColor = true;
+            this.rbDNI.AutoSize = true;
+            this.rbDNI.Location = new System.Drawing.Point(124, 32);
+            this.rbDNI.Name = "rbDNI";
+            this.rbDNI.Size = new System.Drawing.Size(52, 21);
+            this.rbDNI.TabIndex = 1;
+            this.rbDNI.TabStop = true;
+            this.rbDNI.Text = "DNI";
+            this.rbDNI.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(19, 61);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 17);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Buscar por:";
             // 
             // bMostrarTodos
             // 
@@ -354,6 +355,7 @@ namespace Ejercicio2
             this.bMostrarTodos.TabIndex = 18;
             this.bMostrarTodos.Text = "Mostrar todos los Profesores";
             this.bMostrarTodos.UseVisualStyleBackColor = true;
+            this.bMostrarTodos.Click += new System.EventHandler(this.bMostrarTodos_Click);
             // 
             // fProfesores
             // 
