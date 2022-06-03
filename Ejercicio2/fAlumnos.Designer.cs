@@ -379,7 +379,7 @@ namespace Ejercicio2
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "fAlumnos";
-            this.Text = "fAlumnos";
+            this.Text = "Gestión de Alumnos";
             this.Load += new System.EventHandler(this.fAlumnos_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();

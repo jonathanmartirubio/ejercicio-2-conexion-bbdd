@@ -94,6 +94,7 @@ namespace Ejercicio2
             bUltimo.Enabled = false;
             bMostrarTodos.Enabled = false;
             bActualizar.Enabled = false;
+            bGuardar.Enabled = false;
 
             texto = lbContador.Text;
 

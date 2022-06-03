@@ -36,6 +36,7 @@ namespace Ejercicio2
             bPrimero.Enabled = false;
             bUltimo.Enabled = false;
             bActualizar.Enabled = false;
+            bGuardar.Enabled = false;
             lbContador.Text = "No hay cursos.";
 
             texto = lbContador.Text;
@@ -84,6 +85,14 @@ namespace Ejercicio2
             {
                 bSiguiente.Enabled = true;
                 bUltimo.Enabled = true;
+            }
+            if (maxRegistros > 0)
+            {
+                bEliminar.Enabled = true;
+            }
+            else
+            {
+                bEliminar.Enabled = false;
             }
         }
         // ######################  BOTONES NAVEGACION ################################
@@ -220,10 +229,10 @@ namespace Ejercicio2
                 SqlCommandBuilder cb = new SqlCommandBuilder(dataAdapter);
 
                 dataAdapter.Update(dsCursos, "Cursos");
-
+                maxRegistros++;
                 if (maxRegistros == 1)
                 {
-                    maxRegistros++;
+
                     pos = 0;
                     ControlarNavegacion(pos);
                     MostrarRegistro(pos);
@@ -232,7 +241,6 @@ namespace Ejercicio2
                 }
                 else
                 {
-                    maxRegistros++;
                     pos = maxRegistros - 1;
                     ControlarNavegacion(pos);
                     MostrarRegistro(pos);
@@ -317,7 +325,7 @@ namespace Ejercicio2
         //#################### EVENTOS TEXTBUTTON Y COMBOBOX ###############################
         private void tbTextoCambiado(object sender, EventArgs e)
         {
-            if (dsCursos.Tables["Cursos"].Rows.Count != 0)
+            if (maxRegistros > 0)
             {
                 if (tbCodigo.Text == "" || tbNombre.Text == "")
                 {
@@ -381,7 +389,7 @@ namespace Ejercicio2
             dataAdapter.Fill(dsCursos, "Cursos");
             pos = 0;
             maxRegistros = dsCursos.Tables["Cursos"].Rows.Count;
-            if (dsCursos.Tables["Cursos"].Rows.Count == 0)
+            if (maxRegistros == 0)
             {
                 SinRegistros();
                 RellenarComboBox();
